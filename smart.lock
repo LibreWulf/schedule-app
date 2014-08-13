@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "collection-hooks": {}
+    },
+    "packages": {
+      "collection-hooks": {
+        "git": "https://github.com/matb33/meteor-collection-hooks.git",
+        "tag": "v0.7.2",
+        "commit": "261f61f07b371ae913463fba8964a9b93cab531b"
+      }
+    }
+  }
+}
