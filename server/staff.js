@@ -8,6 +8,35 @@ Meteor.startup(function() {
       }
 
       return true;
+    },
+    update: function(user, doc, fieldNames, modifier) {
+      // We only want to allow $set
+      for (var op in modifier) {
+        if (op != "$set") {
+          return false;
+        } else {
+          // Allow set only on some properties
+          for (var settings in modifier.$set) {
+            if (settings == "left" || settings == "early_break" || settings == "lunch" ||
+                settings == "late_break") {
+
+              if (typeof modifier.$set[settings] != "boolean") {
+                return false;
+              }
+
+            } else if (settings == "list") {
+              if (modifier.$set.type !== null && modifier.$set.type !== "8hr" &&
+                  modifier.$set.type !== "late" && modifier.$set.type !== "mds") {
+                return false;
+              }
+            } else {
+              return false;
+            }
+          }
+        }
+      }
+
+      return true;
     }
   });
 
