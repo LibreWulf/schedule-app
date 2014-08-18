@@ -1,0 +1,54 @@
+<head>
+  <title>Schedule App | Manage Staff</title>
+</head>
+
+<body>
+  <h1>Manage Staff</h1>
+  <p>
+    On this page you can manage who will be on what list for the day. Drag and
+    drop names to the appropriate lists, then click "Done" when you finish.
+  </p>
+
+  {{> master }}
+  {{> eightHour }}
+  {{> late }}
+  {{> mds }}
+
+</body>
+
+<template name="master">
+  <h2>Master List:</h2>
+  <ul id="master" class="connectedSortable">
+    {{#each staff}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="eightHour">
+  <h2>8 Hour:</h2>
+  <ul id="8hr" class="connectedSortable droptrue">
+    {{#each staff}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+</template>
+
+
+<template name="late">
+  <h2>Late:</h2>
+  <ul id="late" class="connectedSortable droptrue">
+    {{#each staff}}
+      <li >{{name}}</li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="mds">
+  <h2>MDS:</h2>
+  <ul id="mds" class="connectedSortable droptrue">
+    {{#each staff}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+</template>

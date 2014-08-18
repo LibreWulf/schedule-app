@@ -1,1 +1,1 @@
-Meteor.subscribe("staff", "master");
+Meteor.subscribe("staff");

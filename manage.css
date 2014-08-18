@@ -1,0 +1,12 @@
+.connectedSortable {
+  padding: 5px;
+  list-style-type: none;
+  background: rgb(149, 149, 149);
+  color: white;
+}
+
+.connectedSortable li {
+  padding: 5px;
+  margin: 5px;
+  background: rgb(114, 148, 191);
+}

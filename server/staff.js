@@ -25,8 +25,8 @@ Meteor.startup(function() {
               }
 
             } else if (settings == "list") {
-              if (modifier.$set.type !== null && modifier.$set.type !== "8hr" &&
-                  modifier.$set.type !== "late" && modifier.$set.type !== "mds") {
+              if (modifier.$set.list !== "master" && modifier.$set.list !== "8hr" &&
+                  modifier.$set.list !== "late" && modifier.$set.list !== "mds") {
                 return false;
               }
             } else {
@@ -43,7 +43,7 @@ Meteor.startup(function() {
   Staff.before.insert(function(user, doc) {
     var newdoc = {
       name: doc.name,
-      list: null,
+      list: "master",
       left: false,
       early_break: false,
       lunch: false,
@@ -62,11 +62,5 @@ Meteor.startup(function() {
 });
 
 Meteor.publish("staff", function(list) {
-  if (list === "master") {
-    return Staff.find({list: null});
-  } else if (list === "8hr" || list === "late" || list === "mds") {
-    return Staff.find({list: list});
-  } else {
-    return false;
-  }
+  return Staff.find({});
 });
