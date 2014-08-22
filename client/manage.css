@@ -1,0 +1,40 @@
+div.panel > ul.connectedSortable {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  margin-left: 0;
+  list-style-type: none;
+  font-size: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+ul.connectedSortable > li.panel.callout {
+  padding: 0.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+ul.connectedSortable > li.panel.callout > a.close {
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+    color: rgb(191, 119, 114);
+    font-weight: bold;
+}
+
+ul.connectedSortable > li.panel.callout:first-child {
+  margin-top: 0;
+}
+
+ul.connectedSortable > li.panel.callout:last-child {
+  margin-bottom: 0;
+}
+
+div.panel.listcontainer {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#staff-entry {
+  margin-top: 0.5rem;
+}
+

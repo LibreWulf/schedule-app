@@ -1,54 +1,81 @@
 <head>
   <title>Schedule App | Manage Staff</title>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 </head>
 
 <body>
-  <h1>Manage Staff</h1>
-  <p>
-    On this page you can manage who will be on what list for the day. Drag and
-    drop names to the appropriate lists, then click "Done" when you finish.
-  </p>
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <h1>Manage Staff</h1>
+      <p>
+        On this page you can manage who will be on what list for the day. Drag and
+        drop names to the appropriate lists, then click "Done" when you finish.
+      </p>
 
-  {{> master }}
-  {{> eightHour }}
-  {{> late }}
-  {{> mds }}
+      {{> master }}
+      {{> eightHour }}
+      {{> late }}
+      {{> mds }}
 
+    </div>
+  </div>
+
+  <div id="deleteModal" class="reveal-modal" data-reveal>
+    <h3>Really delete this user?</h3>
+  </div>
 </body>
 
 <template name="master">
   <h2>Master List:</h2>
-  <ul id="master" class="connectedSortable">
-    {{#each staff}}
-      <li>{{name}}</li>
-    {{/each}}
-  </ul>
+  <div class="panel listcontainer">
+    <ul id="master" class="connectedSortable">
+      {{#each staff}}
+        <li class="panel callout"><a class="close" href="#">×</a>{{name}}</li>
+      {{/each}}
+    </ul>
+    <div class="row">
+      <div class="small-5 medium-4 large-3 columns">
+        <a href="#" id="add-button" class="button expand">Add Staff</a>
+      </div>
+      <div class="small-7 medium-8 large-9 columns">
+        <input type="text" id="staff-entry" placeholder="Smith">
+      </div>
+    </div>
+  </div>
 </template>
 
 <template name="eightHour">
   <h2>8 Hour:</h2>
-  <ul id="8hr" class="connectedSortable droptrue">
-    {{#each staff}}
-      <li>{{name}}</li>
-    {{/each}}
-  </ul>
+  <div class="panel listcontainer">
+    <ul id="8hr" class="connectedSortable">
+      {{#each staff}}
+        <li class="panel callout">{{name}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>
 
 
 <template name="late">
   <h2>Late:</h2>
-  <ul id="late" class="connectedSortable droptrue">
-    {{#each staff}}
-      <li >{{name}}</li>
-    {{/each}}
-  </ul>
+  <div class="panel listcontainer">
+    <ul id="late" class="connectedSortable">
+      {{#each staff}}
+        <li class="panel callout">{{name}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>
 
 <template name="mds">
   <h2>MDS:</h2>
-  <ul id="mds" class="connectedSortable droptrue">
-    {{#each staff}}
-      <li>{{name}}</li>
-    {{/each}}
-  </ul>
+  <div class="panel listcontainer">
+    <ul id="mds" class="connectedSortable">
+      {{#each staff}}
+        <li class="panel callout">{{name}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>

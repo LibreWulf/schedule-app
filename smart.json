@@ -1,6 +1,7 @@
 {
   "packages": {
     "collection-hooks": {},
-    "jquery-ui": {}
+    "jquery-ui": {},
+    "foundation": {}
   }
 }

@@ -26,4 +26,18 @@ $(function() {
       });
     }
   }).disableSelection();
+
+  $("#add-button").click(function() {
+      var name = $("#staff-entry").val();
+      Staff.insert({
+          name: name
+      });
+
+      var name = $("#staff-entry").val("");
+  });
+
+  $("ul.connectedSortable").on('click', '.close', function(event) {
+      Staff.remove(UI.getElementData(event.target.parentElement)._id);
+  });
+
 });

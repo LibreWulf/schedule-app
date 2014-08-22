@@ -3,7 +3,8 @@
   "dependencies": {
     "basePackages": {
       "collection-hooks": {},
-      "jquery-ui": {}
+      "jquery-ui": {},
+      "foundation": {}
     },
     "packages": {
       "collection-hooks": {
@@ -15,6 +16,11 @@
         "git": "https://github.com/TimHeckel/meteor-jquery-ui.git",
         "tag": "v1.9.2",
         "commit": "c437d45edcf1367df8d5ffa8bad2867758030bd2"
+      },
+      "foundation": {
+        "git": "https://github.com/ewall/meteor-foundation.git",
+        "tag": "v5.3.3",
+        "commit": "0a879addbc52205631baf8c92340006a9b732ad3"
       }
     }
   }
